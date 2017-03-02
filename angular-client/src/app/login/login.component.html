@@ -1,0 +1,18 @@
+<div class="login-wrapper">
+  <form (ngSubmit)="login()" class="login" novalidate [formGroup]="form">
+    <label class="title">
+      Mex Movil<span class="trademark">&#8482;</span>
+      <br>
+      Mis tareas&#174;
+    </label>
+    <div class="login-group">
+      <input class="username" formControlName="username" type="text" id="login_username" placeholder="Username">
+      <input class="password" formControlName="password" type="password" id="login_password" placeholder="Password">
+      <!--<div class="error active">-->
+      <!--Invalid user name or password-->
+      <!--</div>-->
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">LOG IN</button>
+      <a routerLink="/register" class="signup">Sign up</a>
+    </div>
+  </form>
+</div>
