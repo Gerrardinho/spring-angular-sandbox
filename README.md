@@ -1,1 +1,1 @@
-# Spring Angular project  
+# Spring Angular Sandbox  
