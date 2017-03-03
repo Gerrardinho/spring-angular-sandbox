@@ -26,7 +26,7 @@ class SecurityConfig {
                     .httpBasic()
                         .and()
                     .authorizeRequests()
-                        .antMatchers("/assets/*", "/", "/login", "/register").permitAll()
+                        .antMatchers("*.js", "*.css", "/", "/login", "/register").permitAll()
                         .antMatchers("/api/users/{userId}").access("@authz.check(#userId,principal)")
                         .anyRequest().hasRole("USER")
                         .and()
