@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import {Http, RequestOptions} from "@angular/http";
 
 import {Credentials} from "../models/credentials";
-import {User} from "../models/user";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthenticationService {
@@ -12,7 +14,7 @@ export class AuthenticationService {
     private requestOptions: RequestOptions
   ) {}
 
-  authenticate(credentials: Credentials)  {
+  authenticate(credentials: Credentials) {
 
     if (credentials.valid()) {
       this.requestOptions.headers.set('Authorization', 'Basic ' + credentials.encrypt())
